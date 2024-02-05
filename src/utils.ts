@@ -1,7 +1,7 @@
 export const BASE_URL = process.env.BASE_URL;
 
 // generate an html page with the relevant opengraph tags
-export function generateFarcasterFrame(image: string, choice: number) {
+export function generateFarcasterFrame(image: string) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -12,11 +12,6 @@ export function generateFarcasterFrame(image: string, choice: number) {
 	  <meta property="fc:frame:image" content="${BASE_URL}/event.jpg" />
 	  <meta property="fc:frame:button:1" content="Sign me up! 🙋‍♀️" />
 	  <meta property="fc:frame:button:1:action" content="post_redirect" />
-
-      ${
-        choice === 1 &&
-        `<meta property="fc:frame:button:1" content="Mint ✨" />`
-      }
     </head>
     <body>
       
